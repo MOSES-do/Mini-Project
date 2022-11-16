@@ -1,0 +1,774 @@
+/*
+0-600px:        Phone
+600-900px:      Tablet portrait 
+900-1200px:     Tablet landscape
+[1200-1800] is where our normal styles apply
+1800px + : Big desktop
+*/
+/*
+$breakpoint argument choices:
+- Phone
+- tab-port
+- tab-land
+- big-desktop
+ */
+:root {
+  --color-primary: #1e5afa;
+  --color-primary-variant: rgba(0, 0, 240, 0.2);
+  --color-white: #fff;
+  --color-light: #f4f4f4;
+  --color-black: #000f37;
+  --color-dark: #575757;
+  --bottom-section-padding: 12rem;
+  --bottom-section-padding-mobile: 8rem;
+  --transition: all 400ms ease;
+  --container-width: 84%;
+  --container-width-tablet: 90%;
+  --container-width-phone: 94%; }
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none; }
+
+html {
+  scroll-behavior: smooth;
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 13px; } }
+
+body {
+  font-family: 'Poppins', serif;
+  color: var(--color-dark);
+  line-height: 1.7;
+  background: var(--color-white); }
+
+h1 {
+  font-size: 5.6rem;
+  line-height: 1;
+  color: var(--color-black); }
+
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1; }
+
+h3 {
+  font-size: 2rem;
+  font-weight: 600; }
+
+a {
+  color: var(--color-white);
+  font-weight: 300; }
+
+/*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */
+@media only screen and (max-width: 64em) {
+  h1 {
+    font-size: 4.2rem; }
+  h2 {
+    font-size: 2rem; }
+  h3 {
+    font-size: 1.9rem; } }
+
+/*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */
+@media only screen and (max-width: 37.5em) {
+  h1 {
+    font-size: 3.2rem; }
+  h2 {
+    font-size: 3rem; }
+  h3 {
+    font-size: 1.4rem; } }
+
+.container {
+  width: var(--container-width);
+  margin: 0 auto;
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 64em) {
+    .container {
+      width: var(--container-width-tablet); } }
+  @media only screen and (max-width: 37.5em) {
+    .container {
+      width: var(--container-width-phone); } }
+
+.lead {
+  width: 63%;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 1.5rem auto 3rem;
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 64em) {
+    .lead {
+      width: 72%;
+      margin-bottom: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .lead {
+      width: var(--container-width-phone); } }
+
+img {
+  width: 100%; }
+
+section {
+  max-width: 100vw;
+  padding-bottom: var(--bottom-section-padding);
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 64em) {
+    section {
+      padding-bottom: var(--bottom-section-padding-mobile); } }
+
+.avatar {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  overflow: hidden; }
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.3rem;
+  background: var(--color-white);
+  color: var(--color-black);
+  font-weight: 500;
+  border-radius: 0.4rem; }
+
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2.3rem;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-weight: 500;
+  border-radius: 0.4rem;
+  border: 1px solid transparent;
+  transition: all 300ms ease; }
+  .btn-primary:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-black); }
+
+footer {
+  background: var(--color-primary);
+  font-size: 0.9rem;
+  padding-top: 5rem;
+  color: rgba(255, 255, 255, 0.8); }
+  footer ul li a:hover {
+    color: var(--color-white);
+    text-decoration: underline; }
+  footer .footer__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    gap: 5rem;
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    @media only screen and (max-width: 64em) {
+      footer .footer__container {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media only screen and (max-width: 37.5em) {
+      footer .footer__container {
+        grid-template-columns: 1fr;
+        text-align: center; } }
+    footer .footer__container > div h4 {
+      margin-bottom: 1.6rem;
+      color: var(--color-white); }
+    footer .footer__container--1 {
+      /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+      @media only screen and (max-width: 37.5em) {
+        footer .footer__container--1 {
+          display: flex;
+          flex-direction: column;
+          align-items: center; } }
+      footer .footer__container--1 h3 {
+        font-size: 1.7rem; }
+      footer .footer__container--1 p {
+        margin: 1rem 0 2rem;
+        width: 20rem; }
+      footer .footer__container--1 .footer__subscribe {
+        background: transparent;
+        border: 1px solid var(--color-light);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 3rem;
+        width: 80%; }
+        footer .footer__container--1 .footer__subscribe input {
+          background: transparent;
+          color: var(--color-white);
+          margin-left: 1rem; }
+          footer .footer__container--1 .footer__subscribe input::placeholder {
+            color: var(--color-light); }
+        footer .footer__container--1 .footer__subscribe button {
+          background: var(--color-white);
+          color: var(--color-black);
+          width: 3rem;
+          padding: 1rem 0;
+          transition: all 300ms ease; }
+          footer .footer__container--1 .footer__subscribe button:hover {
+            background: var(--color-light);
+            color: var(--color-primary);
+            cursor: pointer; }
+    footer .footer__container--4 p {
+      margin-bottom: 1.6rem; }
+    footer .footer__container--4 .footer__socials {
+      display: flex;
+      gap: 1rem;
+      font-size: 1.4rem;
+      /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+      @media only screen and (max-width: 37.5em) {
+        footer .footer__container--4 .footer__socials {
+          justify-content: center; } }
+  footer .copyright {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 1.2rem;
+    color: var(--color-white);
+    border-top: 1px solid var(--color-light); }
+
+header {
+  background: url("../images/header bg.jpg") no-repeat top center/100vw;
+  text-align: center;
+  padding-bottom: var(--bottom-section-padding);
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 64em) {
+    header {
+      padding-bottom: var(--bottom-section-padding-mobile);
+      background: var(--color-primary);
+      margin-bottom: 6rem; } }
+  header .header__container-title {
+    padding-top: 12rem;
+    color: var(--color-white);
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    @media only screen and (max-width: 64em) {
+      header .header__container-title {
+        margin-bottom: 1.5rem; } }
+  header .header__container p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 3rem; }
+  header .header__container-image {
+    width: 92%;
+    margin: 0 auto;
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    @media only screen and (max-width: 64em) {
+      header .header__container-image {
+        display: none; } }
+  header .header__container-social {
+    position: absolute;
+    left: 3rem;
+    top: 38%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    @media only screen and (max-width: 64em) {
+      header .header__container-social {
+        gap: 1rem;
+        font-size: 1rem; } }
+    @media only screen and (max-width: 37.5em) {
+      header .header__container-social {
+        display: none; } }
+  header .header__decorator--1 {
+    position: absolute; }
+  header .header__decorator--2 {
+    position: absolute;
+    right: 0;
+    margin-top: -24rem;
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    @media only screen and (max-width: 64em) {
+      header .header__decorator--2 {
+        display: none; } }
+
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 64em) {
+    .cta {
+      margin-top: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .cta {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem; } }
+  .cta a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+    font-weight: 400;
+    background: #000;
+    border-radius: 0.7rem;
+    padding: 0.8rem 1.6rem; }
+    .cta a:hover {
+      background: var(--color-black);
+      color: var(--color-white); }
+    .cta a .logo {
+      width: 2rem; }
+    .cta a h4 {
+      font-weight: 500;
+      font-size: 1.4rem; }
+
+nav {
+  width: 100vw;
+  height: 6rem;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2; }
+  nav.window-scroll {
+    background: var(--color-primary);
+    border-bottom: 1px solid var(--color-white);
+    box-shadow: 0 1rem 1rem var(--color-primary-variant); }
+  nav .nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-primary);
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    @media only screen and (max-width: 64em) {
+      nav .nav__container {
+        position: relative;
+        width: 100vw; } }
+    @media only screen and (min-width: 2030px) {
+      nav .nav__container .nav__logo {
+        transform: translate(-50%, -50%); }
+      nav .nav__container .nav__items {
+        gap: 3rem !important; } }
+    nav .nav__container .nav__items {
+      display: flex;
+      gap: 2rem;
+      /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+      @media only screen and (max-width: 64em) {
+        nav .nav__container .nav__items {
+          display: none;
+          position: fixed;
+          top: 6rem;
+          right: 0;
+          background: var(--color-white);
+          height: max-content;
+          width: 18rem;
+          box-shadow: -2rem 2rem 3rem rgba(0, 0, 0, 0.2);
+          flex-direction: column;
+          gap: 0;
+          z-index: 3; }
+          nav .nav__container .nav__items li {
+            width: 100%;
+            height: 6rem; }
+            nav .nav__container .nav__items li a {
+              color: var(--color-black);
+              width: 100%;
+              height: 6rem;
+              display: block;
+              padding-left: 3rem;
+              display: flex;
+              align-items: center;
+              transition: all 400ms ease;
+              /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+              nav .nav__container .nav__items li a:hover {
+                background: var(--color-primary);
+                color: var(--color-white); } }
+      @media only screen and (max-width: 64em) and (max-width: 64em) {
+        nav .nav__container .nav__items li a {
+          justify-content: center;
+          padding: 0; } }
+    nav .nav__container .nav__logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-5%, -50%);
+      /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+      @media only screen and (max-width: 64em) {
+        nav .nav__container .nav__logo {
+          margin-left: 2rem;
+          position: relative;
+          left: 0;
+          transform: translate(0); } }
+      nav .nav__container .nav__logo h3 {
+        font-size: 1.7rem; }
+      @media only screen and (min-width: 2030px) {
+        nav .nav__container .nav__logo {
+          transform: translate(-50%, -50%); } }
+  nav button {
+    display: none;
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    @media only screen and (max-width: 64em) {
+      nav button {
+        display: inline-block;
+        margin-right: 2.4rem;
+        background: transparent;
+        color: var(--color-white);
+        cursor: pointer; } }
+    nav button i {
+      font-size: 2.4rem; }
+  nav #close-btn {
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    @media only screen and (max-width: 64em) {
+      nav #close-btn {
+        display: none; } }
+  nav .nav__signin-signup {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    @media only screen and (max-width: 64em) {
+      nav .nav__signin-signup {
+        display: none; } }
+
+#about {
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 64em) {
+    #about {
+      margin-top: 3rem; } }
+  #about .about-title {
+    margin: -2rem 0 6rem 0;
+    text-align: center; }
+  #about .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-column-gap: 4rem;
+    margin-bottom: 6rem;
+    align-items: center;
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    #about .container:nth-child(odd) div {
+      order: -1; }
+    @media only screen and (max-width: 64em) {
+      #about .container {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        grid-column-gap: 2rem; } }
+    @media only screen and (max-width: 51.75em) {
+      #about .container {
+        grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr));
+        grid-column-gap: 2rem; } }
+  @media only screen and (max-width: 51.75em) and (max-width: 27.8125em) {
+    #about .container:nth-child(3) img {
+      order: -1; } }
+    #about .container div {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      gap: 2rem; }
+      #about .container div h2 {
+        color: var(--color-black);
+        margin-bottom: .1rem; }
+        @media only screen and (max-width: 51.75em) {
+          #about .container div h2 {
+            font-size: 1.7rem; } }
+      @media only screen and (max-width: 51.75em) {
+        #about .container div p {
+          font-size: .9rem; } }
+      #about .container div .btn {
+        padding: .7rem 1.8rem .7rem 1.8rem; }
+      #about .container div a {
+        align-self: flex-start; }
+        @media only screen and (max-width: 51.75em) {
+          #about .container div a {
+            font-size: .8rem; } }
+
+/* ====================CLIENTS ===================*/
+#clients {
+  text-align: center; }
+  #clients .swiper-wrapper {
+    margin-top: 3rem;
+    padding-bottom: 5rem; }
+    #clients .swiper-wrapper img {
+      width: 70%; }
+  #clients .clients__container {
+    display: flex;
+    align-items: center; }
+  #clients .mySwiper > .swiper-wrapper {
+    transition-timing-function: linear !important; }
+
+/* ==================== TESTIMONIALS ===================*/
+#testimonials > *:not(:nth-child(3)) {
+  text-align: center; }
+
+#testimonials .testimonials__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.2rem;
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 64em) {
+    #testimonials .testimonials__container {
+      gap: .7rem; } }
+
+#testimonials .testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  background: var(--color-light);
+  padding: 3rem;
+  font-size: 0.88rem;
+  border: 1px solid transparent;
+  transition: all 300ms ease;
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 64em) {
+    #testimonials .testimonial {
+      padding: 1rem; } }
+
+#testimonials .testimonial:hover {
+  background: var(--color-white);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 2rem 2rem var(--color-primary-variant);
+  z-index: 1;
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 64em) {
+    #testimonials .testimonial:hover {
+      background: var(--color-light);
+      border-color: transparent;
+      color: var(--color-black);
+      box-shadow: none; } }
+
+#testimonials .testimonial__client {
+  display: flex;
+  gap: 1rem;
+  align-items: center; }
+
+#testimonials .testimonial__work {
+  line-height: 1; }
+
+/* ==================== FAQS ===================*/
+#faqs h1 {
+  text-align: center;
+  margin-bottom: 4rem; }
+
+#faqs .faqs__container {
+  width: 44%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */
+  /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+  @media only screen and (max-width: 64em) {
+    #faqs .faqs__container {
+      width: 75%; } }
+  @media only screen and (max-width: 37.5em) {
+    #faqs .faqs__container {
+      width: 90%; } }
+  #faqs .faqs__container .faq {
+    background: var(--color-light);
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    border: 1px solid #ddd;
+    cursor: pointer; }
+    #faqs .faqs__container .faq:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+      @media only screen and (max-width: 64em) {
+        #faqs .faqs__container .faq:hover {
+          border-color: transparent;
+          color: var(--color-black); } }
+    #faqs .faqs__container .faq span i {
+      font-size: 1.4rem;
+      font-weight: 200; }
+    #faqs .faqs__container .faq.open {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      box-shadow: 0 2rem 2rem var(--color-primary-variant);
+      z-index: 1; }
+      #faqs .faqs__container .faq.open .faq__anwser {
+        display: block; }
+  #faqs .faqs__container .faq_question-answer h4 {
+    font-size: 1.2rem;
+    font-weight: 500; }
+  #faqs .faqs__container .faq_question-answer .faq__anwser {
+    margin-top: 1rem;
+    display: none; }
+
+/* ==================== DOWNLOAD App ===================*/
+.downloadApp__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 6rem; }
+  .downloadApp__container .downloadApp__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+    @media only screen and (max-width: 64em) {
+      .downloadApp__container .downloadApp__content {
+        text-align: center; } }
+    .downloadApp__container .downloadApp__content .cta {
+      justify-content: left;
+      margin-top: 2rem;
+      /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */ }
+      @media only screen and (max-width: 64em) {
+        .downloadApp__container .downloadApp__content .cta {
+          flex-direction: column;
+          gap: 1rem;
+          margin: 0 auto; } }
+
+/* ==================== Subscribe ===================*/
+.subscribe__container {
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: grid;
+  grid-template-columns: 70% 20%;
+  align-items: center;
+  gap: 10%;
+  padding: 4rem;
+  height: 20rem;
+  border-radius: 1rem; }
+  .subscribe__container .subscribe__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; }
+    @media only screen and (max-width: 40.125em) {
+      .subscribe__container .subscribe__text {
+        gap: 1rem; } }
+  @media only screen and (max-width: 75.25em) {
+    .subscribe__container {
+      grid-template-columns: 60% 30%;
+      gap: 10%;
+      height: auto;
+      place-items: center; }
+      .subscribe__container .subscribe__text h2 {
+        font-size: 1.8rem; } }
+  @media only screen and (max-width: 60.25em) {
+    .subscribe__container {
+      grid-template-columns: 1fr; } }
+  @media only screen and (max-width: 40.125em) {
+    .subscribe__container .subscribe__text {
+      text-align: center; } }
+  .subscribe__container .subscribe__btn {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    @media only screen and (max-width: 75.25em) {
+      .subscribe__container .subscribe__btn {
+        width: 80%; } }
+    @media only screen and (max-width: 60.25em) {
+      .subscribe__container .subscribe__btn {
+        width: 35%; } }
+    @media only screen and (max-width: 40.125em) {
+      .subscribe__container .subscribe__btn {
+        width: 30%;
+        padding: .8rem; } }
+    @media only screen and (max-width: 28.8125em) {
+      .subscribe__container .subscribe__btn {
+        width: 50%;
+        padding: .6rem; } }

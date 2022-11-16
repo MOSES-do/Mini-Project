@@ -1,0 +1,117 @@
+header {
+    background: url('../images/header\ bg.jpg') no-repeat top center/100vw;
+    text-align: center;
+    padding-bottom: var(--bottom-section-padding);
+
+    @include query(tablet) {
+        padding-bottom: var(--bottom-section-padding-mobile);
+        background: var(--color-primary);
+        margin-bottom: 6rem;
+    }
+
+
+
+    .header__container {
+        &-title {
+            padding-top: 12rem;
+            color: var(--color-white);
+
+            @include query(tablet) {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 3rem;
+        }
+
+        &-image {
+            width: 92%;
+            margin: 0 auto;
+
+            @include query(tablet) {
+                display: none;
+            }
+        }
+
+        &-social {
+            position: absolute;
+            left: 3rem;
+            top: 38%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            font-size: 1.2rem;
+
+            @include query(tablet) {
+                gap: 1rem;
+                font-size: 1rem;
+            }
+
+            @include query(phone) {
+                display: none;
+            }
+        }
+    }
+
+    .header__decorator--1 {
+        position: absolute;
+    }
+
+    .header__decorator--2 {
+        position: absolute;
+        right: 0;
+        margin-top: -24rem;
+
+        @include query(tablet) {
+            display: none;
+        }
+    }
+
+}
+
+
+// 
+.cta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    @include query(tablet) {
+        margin-top: 3rem;
+    }
+
+    @include query(phone) {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-align: left;
+        font-weight: 400;
+        background: #000;
+        border-radius: 0.7rem;
+        padding: 0.8rem 1.6rem;
+
+
+        &:hover {
+            background: var(--color-black);
+            color: var(--color-white);
+        }
+
+        .logo {
+            width: 2rem;
+        }
+
+        h4 {
+            font-weight: 500;
+            font-size: 1.4rem;
+        }
+    }
+}

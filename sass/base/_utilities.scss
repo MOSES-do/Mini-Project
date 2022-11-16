@@ -1,0 +1,42 @@
+.container {
+    width: var(--container-width);
+    margin: 0 auto;
+
+    @include query(tablet) {
+        width: var(--container-width-tablet);
+    }
+
+    @include query(phone) {
+        width: var(--container-width-phone);
+    }
+}
+
+.lead {
+    width: 63%;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 1.5rem auto 3rem;
+
+    @include query(tablet) {
+        width: 72%;
+        margin-bottom: 3rem;
+    }
+
+    @include query(phone) {
+        width: var(--container-width-phone);
+    }
+}
+
+img {
+    width: 100%;
+}
+
+section {
+    max-width: 100vw;
+    padding-bottom: var(--bottom-section-padding);
+
+    @include query(tablet) {
+        padding-bottom: var(--bottom-section-padding-mobile);
+    }
+}

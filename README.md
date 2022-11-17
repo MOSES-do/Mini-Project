@@ -1,1 +1,1 @@
-# Mini-Project
+# Mini-Project - A smart home website
